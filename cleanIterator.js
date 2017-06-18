@@ -54,8 +54,8 @@ function iterateSkill(x, verbose) {
 			local_max_wins = parseInt($('#win_pct').text()); //
 			local_min_losses = parseInt($('#lose_pct').text());
 			optimal_i = i;
-			tied_skills = ["These skills got as many wins, but also had more losses: "];
-			true_tied_skills = ["These skills were perfectly tied in wins and losses: "];
+			tied_skills = ["These skills got about as many wins (+-1), but also had more losses: "];
+			true_tied_skills = ["These skills were pretty much tied (+-1) in wins and losses: "];
 			old_skill_name = data.skills[$('#challenger_' + x).val()].name;
 		} //Otherwise if the current wins are within 1 kill, declare a tie.
 		else if (Math.abs(current_wins - local_max_wins) < 2) {
@@ -68,7 +68,7 @@ function iterateSkill(x, verbose) {
 
 			}
 		 	//In the case of a true tie, push to the true tie array. 
-			else if (Math.abs(current_losses - local_min_losses) < 2) {
+			else if (current_losses == local_min_losses) {
 				true_tied_skills.push(data.skills[$('#challenger_' + x).val()].name);
 			}
 			//Otherwise, push to the lesser ties array. 
