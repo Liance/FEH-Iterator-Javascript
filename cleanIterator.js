@@ -41,7 +41,7 @@ function iterateSkill(x, verbose) {
 	var local_min_losses = 0;
 	var optimal_i = -1;
 	var tied_skills = [""];
-	var true_tied_skills = [""]
+	var true_tied_skills = [""];
 	var old_skill_name = "";
 	jQuery.fx.off = true; //Yeah, we don't want those animations around for now.
 	
@@ -94,7 +94,7 @@ function iterateSkill(x, verbose) {
 	}
 
 	if (true_tied_skills.length == 1) {
-		true_tied_skills = [""]
+		true_tied_skills = [""];
 	}
 	
 	//The function is not verbose unless we tell it otherwise.
@@ -113,4 +113,4 @@ $(document).ready(function(){
 	$("#challenger_b_picture").click(function() {iterateSkill("b", true);});
 	$("#challenger_c_picture").click(function() {iterateSkill("c", true);});
 	$("#challenger_s_picture").click(function() {iterateSkill("s", true);});
-})
+});
